@@ -7,11 +7,12 @@ These are my settings for ESLint and Prettier
 You might like them - or you might not. Don't worry you can always change them.
 
 ## What it does
-* Lints JavaScript based on the latest standards
-* Fixes issues and formatting errors with Prettier
-* Lints + Fixes inside of html script tags
-* Lints + Fixes React via eslint-config-airbnb
-* You can see all the [rules here](https://github.com/Kamigami55/eslint-config-eason/blob/master/.eslintrc.js) - these generally abide by the code written in my courses. You are very welcome to overwrite any of these settings, or just fork the entire thing to create your own.
+
+- Lints JavaScript based on the latest standards
+- Fixes issues and formatting errors with Prettier
+- Lints + Fixes inside of html script tags
+- Lints + Fixes React via eslint-config-airbnb
+- You can see all the [rules here](https://github.com/Kamigami55/eslint-config-eason/blob/master/.eslintrc.js) - these generally abide by the code written in my courses. You are very welcome to overwrite any of these settings, or just fork the entire thing to create your own.
 
 ## Installing
 
@@ -20,7 +21,6 @@ You can use eslint globally and/or locally per project.
 It's usually best to install this locally once per project, that way you can have project specific settings as well as sync those settings with others working on your project via git.
 
 I also install globally so that any project or rogue JS file I write will have linting and formatting applied without having to go through the setup. You might disagree and that is okay, just don't do it then 😃.
-
 
 ## Local / Per Project Install
 
@@ -38,7 +38,7 @@ npx install-peerdeps --dev eslint-config-eason
 
 ```json
 {
-  "extends": [ "eason" ]
+  "extends": ["eason"]
 }
 ```
 
@@ -46,12 +46,11 @@ For TypeScript projects, use `eason/typescript`.
 
 ```json
 {
-  "extends": [ "eason/typescript" ]
+  "extends": ["eason/typescript"]
 }
 ```
 
 TypeScript users will also need a `tsconfig.json` file in their project. An empty object (`{}`) will do if this is a new project.
-
 
 Tip: You can alternatively put this object in your `package.json` under the property `"eslintConfig":`. This makes one less file in your project.
 
@@ -98,25 +97,26 @@ Once you have done one, or both, of the above installs. You probably want your e
 
 1. Install the [ESLint package](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 2. Now we need to setup some VS Code settings via `Code/File` → `Preferences` → `Settings`. It's easier to enter these settings while editing the `settings.json` file, so click the Open (Open Settings) icon in the top right corner:
-  ```js
-  // These are all my auto-save configs
-  "editor.formatOnSave": true,
-  // turn it off for JS and JSX, we will do this via eslint
-  "[javascript]": {
-    "editor.formatOnSave": false
-  },
-  "[javascriptreact]": {
-    "editor.formatOnSave": false
-  },
-  // show eslint icon at bottom toolbar
-  "eslint.alwaysShowStatus": true,
-  // tell the ESLint plugin to run on save
-  "editor.codeActionsOnSave": {
-    "source.fixAll": true
-  }
-  ```
 
-After attempting to lint your file for the first time, you may need to click on 'ESLint' in the bottom right and select 'Allow Everywhere' in the alert window. 
+```js
+// These are all my auto-save configs
+"editor.formatOnSave": true,
+// turn it off for JS and JSX, we will do this via eslint
+"[javascript]": {
+  "editor.formatOnSave": false
+},
+"[javascriptreact]": {
+  "editor.formatOnSave": false
+},
+// show eslint icon at bottom toolbar
+"eslint.alwaysShowStatus": true,
+// tell the ESLint plugin to run on save
+"editor.codeActionsOnSave": {
+  "source.fixAll": true
+}
+```
+
+After attempting to lint your file for the first time, you may need to click on 'ESLint' in the bottom right and select 'Allow Everywhere' in the alert window.
 
 Finally you'll usually need to restart VS code. They say you don't need to, but it's never worked for me until I restart.
 
@@ -140,13 +140,14 @@ Can someone add this?
 If you have previously configured ESLint to run via a File Watcher, [turn that off.](https://www.jetbrains.com/help/idea/using-file-watchers.html#enableFileWatcher)
 
 ### If you choose Local / Per Project Install Above
+
 1. Open ESLint configuration by going to File > Settings (Edit > Preferences on Mac) > Languages & Frameworks > Code Quality Tools > ESLint (optionally just search settings for "eslint")
 1. Select **Automatic ESLint Configuration**
 1. Check **Run eslint --fix on save**
 
 ### If you choose Global Install
 
-The following steps are for a typical Node / ESLint global installtion.  If you have a customized setup, refer to JetBrains docs for more [ESLint Configuration Options](https://www.jetbrains.com/help/webstorm/eslint.html#ws_js_eslint_manual_configuration).
+The following steps are for a typical Node / ESLint global installtion. If you have a customized setup, refer to JetBrains docs for more [ESLint Configuration Options](https://www.jetbrains.com/help/webstorm/eslint.html#ws_js_eslint_manual_configuration).
 
 1. Open ESLint configuration by going to File > Settings (Edit > Preferences on Mac) > Languages & Frameworks > Code Quality Tools > ESLint (optionally just search settings for "eslint")
 1. Select **Manual ESLint configuration**
@@ -159,9 +160,9 @@ The following steps are for a typical Node / ESLint global installtion.  If you 
 
 1. Open Prettier configuration by going to File > Settings (Edit > Preferences on Mac) > Languages & Frameworks > Code Quality Tools > Prettier (optionally just search settings for "prettier")
 1. Uncheck both **On code reformat** and **On save**
-1. *Optional BUT IMPORTANT:* If you have the Prettier extension enabled for other languages like CSS and HTML, turn it off for JS since we are doing it through Eslint already.
-    1. Make sure the **Run for files** glob does not include `js,ts,jsx,tsx`.
-    2. An example glob for styles, config, and markdown. `{**/*,*}.{yml,css,sass,md}`
+1. _Optional BUT IMPORTANT:_ If you have the Prettier extension enabled for other languages like CSS and HTML, turn it off for JS since we are doing it through Eslint already.
+   1. Make sure the **Run for files** glob does not include `js,ts,jsx,tsx`.
+   2. An example glob for styles, config, and markdown. `{**/*,*}.{yml,css,sass,md}`
 
 ## With Typescript
 
