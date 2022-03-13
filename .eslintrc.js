@@ -1,5 +1,10 @@
 module.exports = {
-  extends: ['airbnb', 'prettier'],
+  extends: [
+    'airbnb',
+    'prettier',
+    'plugin:import/recommended',
+    'plugin:import/typescript',
+  ],
   parser: '@babel/eslint-parser',
   parserOptions: {
     requireConfigFile: false,
@@ -51,13 +56,10 @@ module.exports = {
       },
     ],
     'no-console': 0,
-    'import/prefer-default-export': 0,
-    import: 0,
     'func-names': 0,
     'space-before-function-paren': 0,
     'comma-dangle': 0,
     'max-len': 0,
-    'import/extensions': 0,
     'no-underscore-dangle': 0,
     'consistent-return': 0,
     'react/display-name': 1,
@@ -120,6 +122,8 @@ module.exports = {
     'react-hooks/exhaustive-deps': 'warn',
     '@typescript-eslint/comma-dangle': ['off'],
     'react/jsx-props-no-spreading': 'off',
+    'simple-import-sort/imports': 'error',
+    'simple-import-sort/exports': 'error',
   },
-  plugins: ['html', 'prettier', 'react-hooks'],
+  plugins: ['html', 'prettier', 'react-hooks', 'import', 'simple-import-sort'],
 }
