@@ -1,5 +1,7 @@
 # No-Sweat™ Eslint and Prettier Setup
 
+![npm-version](https://img.shields.io/npm/v/eslint-config-eason)
+
 Modified from [wesbos/eslint-config-wesbos](https://github.com/wesbos/eslint-config-wesbos)
 
 These are my settings for ESLint and Prettier
