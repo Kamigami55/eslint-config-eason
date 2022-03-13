@@ -33,6 +33,7 @@ module.exports = {
     amd: true, // Enables require() and define() as global variables as per the amd spec.
     es6: true,
   },
+  ignorePatterns: ['node_modules/', '.next/'],
   rules: {
     'prettier/prettier': [
       'error',
