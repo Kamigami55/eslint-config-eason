@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-eason",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "ESLint and Prettier Config from Eason Chang",
   "keywords": [
     "javascript",
