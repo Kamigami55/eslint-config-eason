@@ -41,7 +41,7 @@ module.exports = {
         trailingComma: 'es5',
         singleQuote: true,
         printWidth: 80,
-        semi: false,
+        semi: true,
       },
     ],
     'react/react-in-jsx-scope': 'off',
@@ -50,4 +50,4 @@ module.exports = {
     'simple-import-sort/exports': 'error',
     'import/newline-after-import': 'error',
   },
-}
+};
