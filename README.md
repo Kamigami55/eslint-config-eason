@@ -30,8 +30,13 @@ I also install globally so that any project or rogue JS file I write will have l
 
 2. Then we need to install everything needed by the config:
 
-```
+```shell
+# with npm
 npx install-peerdeps --dev eslint-config-eason
+# with yarn
+npx install-peerdeps --yarn --dev eslint-config-eason
+# with pnpm
+npx install-peerdeps --pnpm --dev eslint-config-eason
 ```
 
 3. You can see in your package.json there are now a big list of devDependencies.
