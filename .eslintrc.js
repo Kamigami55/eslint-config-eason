@@ -19,6 +19,7 @@ module.exports = {
     ecmaFeatures: {
       jsx: true, // Enable JSX since we're using React
     },
+    project: './tsconfig.json',
   },
   settings: {
     react: {
