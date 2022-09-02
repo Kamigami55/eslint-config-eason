@@ -41,20 +41,26 @@ npx install-peerdeps --pnpm --dev eslint-config-eason
 
 3. You can see in your package.json there are now a big list of devDependencies.
 
-4. Create a `.eslintrc` file in the root of your project's directory (it should live where package.json does). Your `.eslintrc` file should look like this:
+4. Create a `.eslintrc.js` file in the root of your project's directory (it should live where package.json does). Your `.eslintrc.js` file should look like this:
 
-```json
-{
-  "extends": ["eason"]
-}
+```js
+module.exports = {
+  extends: ['eason'],
+};
 ```
 
-For TypeScript projects, use `eason/typescript`.
+For TypeScript projects, use `eason/typescript` for TS files.
 
-```json
-{
-  "extends": ["eason/typescript"]
-}
+```js
+module.exports = {
+  extends: ['eason'],
+  overrides: [
+    {
+      files: '**/*.{ts,tsx}',
+      extends: ['eason/typescript'],
+    },
+  ],
+};
 ```
 
 TypeScript users will also need a `tsconfig.json` file in their project. An empty object (`{}`) will do if this is a new project.
