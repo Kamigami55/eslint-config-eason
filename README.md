@@ -78,6 +78,25 @@ Tip: You can alternatively put this object in your `package.json` under the prop
 
 6. Now you can manually lint your code by running `npm run lint` and fix all fixable issues with `npm run lint:fix`. You probably want your editor to do this though.
 
+7. If you want to format files other than JS/TS, you can add `.prettierrc.js` file to project root:
+
+```js
+module.exports = {
+  trailingComma: 'es5',
+  singleQuote: true,
+  printWidth: 80,
+  semi: true,
+};
+```
+
+And add script in `package.json` for fix all issues with `npm run format:fix`:
+
+```json
+"scripts": {
+  "format:fix": "prettier --write './**/*.{css,scss,md,mdx,json}'"
+},
+```
+
 ## Settings
 
 If you'd like to overwrite eslint or prettier settings, you can add the rules in your `.eslintrc` file. The [ESLint rules](https://eslint.org/docs/rules/) go directly under `"rules"` while [prettier options](https://prettier.io/docs/en/options.html) go under `"prettier/prettier"`. Note that prettier rules overwrite anything in my config (trailing comma, and single quote), so you'll need to include those as well.
